@@ -1,8 +1,8 @@
 class Hdf5 < Formula
   desc "File format designed to store large amounts of data"
   homepage "http://www.hdfgroup.org/HDF5"
-  url "https://www.hdfgroup.org/ftp/HDF5/releases/hdf5-1.8.16/src/hdf5-1.8.16.tar.bz2"
-  sha256 "13aaae5ba10b70749ee1718816a4b4bfead897c2fcb72c24176e759aec4598c6"
+  url "https://www.hdfgroup.org/ftp/HDF5/releases/hdf5-1.10/hdf5-1.10.0-patch1/src/hdf5-1.10.0-patch1.tar.bz2"
+  sha256 "f772264dd853dceb18855418a81c63c9cdcca7bcd075b9c54eb516af006fdfba"
   revision 1
 
   bottle do
@@ -37,8 +37,7 @@ class Hdf5 < Formula
 
     args = %W[
       --prefix=#{prefix}
-      --enable-production
-      --enable-debug=no
+      --enable-build-mode=production
       --disable-dependency-tracking
       --with-zlib=#{OS.mac? ? "/usr" : Formula["zlib"].opt_prefix}
       --with-szlib=#{Formula["szip"].opt_prefix}
